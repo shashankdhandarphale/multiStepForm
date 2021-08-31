@@ -1,0 +1,28 @@
+.col-form-label{
+    text-align: end;
+    font-weight: bold;
+}
+.form-control{
+    width: 50%;
+    margin-left: 85px;
+}
+.form-group{
+    margin-bottom: 30px;
+}
+.form-group .col-sm-8 span{
+    margin-left: 85px;
+}
+.form-group input{
+    border: 3px solid;
+    width: 115px;
+}
+.btn-primary {
+    width: 100px;
+    padding: 15px;
+    background-color: red !important;
+    border: 1px solid black;
+    margin-left: 150px;
+}
+.confirmation-page {
+    margin-top: 100px;
+}
