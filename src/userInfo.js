@@ -50,13 +50,11 @@ class UserInfo extends Component {
     if (this.state.page == 0) {
       dispatch(initiateUserInfo(values));
     } else if (this.state.page == 1) {
-      console.log(this.state.page, values);
       dispatch(initiateOfficeInfo(values));
     } else if (this.state.page == 2) { 
       values = getUserData();
       dispatch(registerUser(values));
     }
-   // this.nextPage();
   }
 
   renderPageTitle(page) {
@@ -73,12 +71,11 @@ class UserInfo extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    console.log(this.props.response.userInfoReducer.isOfficeInfoStepCompleted, this.state.page);
-  if (this.props.response.userInfoReducer.isUserInfoStepCompleted && this.state.page == 0) {
-    this.nextPage();
-  } else if (this.props.response.userInfoReducer.isOfficeInfoStepCompleted && this.state.page == 1) {
-    this.nextPage();
-  }
+    if (this.props.response.userInfoReducer.isUserInfoStepCompleted && this.state.page == 0) {
+      this.nextPage();
+    } else if (this.props.response.userInfoReducer.isOfficeInfoStepCompleted && this.state.page == 1) {
+      this.nextPage();
+    }
 }
 
   render() {
