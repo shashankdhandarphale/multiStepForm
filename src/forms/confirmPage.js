@@ -114,9 +114,8 @@ const ConfirmPage = props => {
 };
 
 const confirmationForm = reduxForm({
-  form: 'confirmationForm', //                 <------ same form name
-  destroyOnUnmount: false, //        <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
+  form: 'confirmationForm', 
+  destroyOnUnmount: false
 })(ConfirmPage);
 
 export default confirmationForm;

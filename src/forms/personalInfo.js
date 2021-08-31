@@ -65,7 +65,9 @@ const validate = values => {
   }
   if (!values.mobileNumber) {
     errors.mobileNumber = 'Required';
-  }
+  } else if (!/^\d{10}$/.test(values.mobileNumber)) {
+    errors.mobileNumber = 'Invalid mobile number';
+  } 
   if (!values.email) {
     errors.email = 'Required';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -84,15 +86,14 @@ const validate = values => {
 };
 
 const personalInfoForm = reduxForm({
-  form: 'personalInfoForm', //                 <------ same form name
-  destroyOnUnmount: false, //        <------ preserve form data
+  form: 'personalInfoForm', 
+  destroyOnUnmount: false,
   validate
 })(PersonalInfo);
 
-// You have to connect() to any reducers that you wish to connect to yourself
 const InitializeFromStateForm = connect(
   state => ({
-    initialValues: state.userInfoReducer // pull initial values from account reducer
+    initialValues: state.userInfoReducer 
   })
 )(personalInfoForm)
 

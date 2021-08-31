@@ -78,14 +78,15 @@ const validate = values => {
   }
   if (!values.poBox) {
     errors.poBox = 'Required';
+  } else if (!/^\d{6}$/.test(values.poBox)) {
+    errors.poBox = 'Invalid PO Box number';
   }
   return errors;
 };
 
 const officeInfoForm = reduxForm({
-  form: 'officeInfoForm', //                 <------ same form name
-  destroyOnUnmount: false, //        <------ preserve form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+  form: 'officeInfoForm', 
+  destroyOnUnmount: false, 
   validate,
 })(OfficeInfo);
 
