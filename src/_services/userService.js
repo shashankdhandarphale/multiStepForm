@@ -7,7 +7,6 @@ export const userService = {
 function register(user) {
     
     const { payload } = user;
-    console.log(JSON.stringify(user));
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
