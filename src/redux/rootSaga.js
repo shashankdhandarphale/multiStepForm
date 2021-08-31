@@ -11,12 +11,9 @@ import {userInfoSuccess,
 
 export function* userInfoAsync(user) {
   const{ payload } = user;
-  console.log('user user', JSON.stringify(payload))
  try {
     const response = yield call(userService.register, { payload });
-    console.log('response', response)
     if (response.status === 201 && response.status < 300) {
-      console.log('response', response)
       yield put(userInfoSuccess(response));
     }
   } catch (error) {
@@ -30,12 +27,9 @@ export function* userInfo() {
 
 export function* officeInfoAsync(user) {
   const{ payload } = user;
-  console.log('user user', JSON.stringify(payload))
  try {
     const response = yield call(userService.register, { payload });
-    console.log('response', response)
     if (response.status === 201 && response.status < 300) {
-      console.log('response', response)
       yield put(officeInfoSuccess(response));
     }
   } catch (error) {
@@ -49,12 +43,9 @@ export function* officeInfo() {
 
 export function* registerAsync(user) {
   const{ payload } = user;
-  console.log('user user', JSON.stringify(payload))
  try {
     const response = yield call(userService.register, { payload });
-    console.log('response', response)
     if (response.status === 201 && response.status < 300) {
-      console.log('response', response)
       yield put(registerUserSuccess(response));
     }
   } catch (error) {
