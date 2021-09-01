@@ -1,0 +1,15 @@
+Tasks completed 
+- layout design
+- forms with validation
+- redux integration
+- redux-saga
+- mock server 
+- stepper 
+- webcam / photo upload 
+
+tasks pending 
+
+- success screen 
+- signature pad - have tried to integrate but was getting some npm package issues
+- slider animation - implemented but wasnt behaving as per expectation as form design is same
+
